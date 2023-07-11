@@ -1,0 +1,167 @@
+{
+	"info": {
+		"_postman_id": "f31778f7-4106-446b-bf75-b48bbc0775a8",
+		"name": "Bitmap-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26463866"
+	},
+	"item": [
+		{
+			"name": "Get Announcements",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    // \"search\": \"Updates\",\r\n    // \"orderBy\": \"DESC\",\r\n    \"skip\": 2,\r\n    \"take\": 3\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{APP_URL}}/announcements",
+					"host": [
+						"{{APP_URL}}"
+					],
+					"path": [
+						"announcements"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Announcement",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{APP_URL}}/announcements/:uuid",
+					"host": [
+						"{{APP_URL}}"
+					],
+					"path": [
+						"announcements",
+						":uuid"
+					],
+					"variable": [
+						{
+							"key": "uuid",
+							"value": "a3665ccd-85dd-44ad-8aca-0fcd1251bbff"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Announcement",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Cameras and Action!!!\",\r\n    \"link\": \"http://google.com\",\r\n    \"content\": \"Tryna keep it peacefull is a trouble for me\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{APP_URL}}/announcements",
+					"host": [
+						"{{APP_URL}}"
+					],
+					"path": [
+						"announcements"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Announcement",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Cameras and Action!!!\",\r\n    \"link\": \"http://google.com\",\r\n    \"content\": \"Tryna keep it peacefull is a trouble for me\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{APP_URL}}/announcements/:uuid",
+					"host": [
+						"{{APP_URL}}"
+					],
+					"path": [
+						"announcements",
+						":uuid"
+					],
+					"variable": [
+						{
+							"key": "uuid",
+							"value": "c0553800-b279-46ff-be80-6ce25f5c3250"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Fill Database",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{APP_URL}}/announcements/fill",
+					"host": [
+						"{{APP_URL}}"
+					],
+					"path": [
+						"announcements",
+						"fill"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "APP_URL",
+			"value": "http:",
+			"type": "string"
+		}
+	]
+}
