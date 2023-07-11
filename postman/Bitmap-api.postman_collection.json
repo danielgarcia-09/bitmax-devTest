@@ -7,6 +7,25 @@
 	},
 	"item": [
 		{
+			"name": "Fill Database",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{APP_URL}}/announcements/fill",
+					"host": [
+						"{{APP_URL}}"
+					],
+					"path": [
+						"announcements",
+						"fill"
+					]
+				},
+				"description": "This endpoint is used for filling our database with Bitmax with the 5 most recent announcements, consuming their API.  \n\nUse this endpoint first"
+			},
+			"response": []
+		},
+		{
 			"name": "Get Announcements",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
@@ -31,7 +50,8 @@
 					"path": [
 						"announcements"
 					]
-				}
+				},
+				"description": "Get endpoint for all announcements saved from Bitmax"
 			},
 			"response": []
 		},
@@ -52,10 +72,11 @@
 					"variable": [
 						{
 							"key": "uuid",
-							"value": "a3665ccd-85dd-44ad-8aca-0fcd1251bbff"
+							"value": "a3665ccd-85dd-44ad-8aca-0fcd1251bbffs"
 						}
 					]
-				}
+				},
+				"description": "Endpoint for deleting a specific announcement using the database uuid"
 			},
 			"response": []
 		},
@@ -81,7 +102,8 @@
 					"path": [
 						"announcements"
 					]
-				}
+				},
+				"description": "Create announcement endpoint"
 			},
 			"response": []
 		},
@@ -114,25 +136,8 @@
 							"value": "c0553800-b279-46ff-be80-6ce25f5c3250"
 						}
 					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Fill Database",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"url": {
-					"raw": "{{APP_URL}}/announcements/fill",
-					"host": [
-						"{{APP_URL}}"
-					],
-					"path": [
-						"announcements",
-						"fill"
-					]
-				}
+				},
+				"description": "You can update link, content or title of a specific announcement referring it by its uuid"
 			},
 			"response": []
 		}
@@ -160,7 +165,7 @@
 	"variable": [
 		{
 			"key": "APP_URL",
-			"value": "http:",
+			"value": "http://localhost:3000",
 			"type": "string"
 		}
 	]
