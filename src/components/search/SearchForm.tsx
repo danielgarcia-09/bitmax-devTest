@@ -40,19 +40,11 @@ const SearchForm = () => {
     const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
-        if (!search) {
-            setErrors({
-                ...errors,
-                search: "Search is required"
-            })
-            return;
-        }
-
         if ((!search && !from && !to) || (from && !to) || (!from && to)) {
             setErrors({
                 ...errors,
-                from: "From is required",
-                to: "To is required"
+                from: "From and To are required",
+                to: "From and To are required"
             })
             return;
         }

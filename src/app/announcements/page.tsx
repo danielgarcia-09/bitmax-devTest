@@ -13,7 +13,7 @@ const SearchPage = () => {
 
                 <h1 className="text-4xl font-bold my-16">Search for announcements.</h1>
 
-                <main className="flex min-h-screen flex-col items-center gap-8 justify-between">
+                <main className="flex min-h-screen flex-col items-center gap-1">
 
                     <SearchForm />
                     <AnnouncementGrid />

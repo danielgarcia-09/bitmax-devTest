@@ -8,7 +8,7 @@ const Home = () => {
     <>
       <section className='w-5/6 mx-auto mt-12 mb-8'>
         <IndexTopStats />
-        <main className="flex min-h-screen flex-col items-center gap-6 justify-between">
+        <main className="flex min-h-screen flex-col items-center gap-8">
           <IndexExchangeChart />
           <IndexExchangeTable />
         </main>
