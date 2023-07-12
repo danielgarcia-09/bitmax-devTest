@@ -1,5 +1,13 @@
-import { CoinActionEnum, CoinSideEnum } from "../entities/coin.interface";
+export enum CoinSideEnum {
+    BUY = 'Buy',
+    SELL = 'Sell'
+}
 
+export enum CoinActionEnum {
+    "INSERT" = "insert",
+    "UPDATE" = "update",
+    "DELETE" = "delete"
+}
 export interface PriceSocketDataI {
     action: CoinActionEnum;
     error?: string;

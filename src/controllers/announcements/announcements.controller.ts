@@ -1,4 +1,4 @@
-import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
+import { Body, Controller, Delete, Get, InternalServerErrorException, Param, Post, Put, Query } from '@nestjs/common';
 import { AnnouncementEntity } from 'src/database/entities/announcement.entity';
 import { CreateAnnouncementDTO } from 'src/dtos/announcements/create.dto';
 import { FilterDTO } from 'src/dtos/general/filter.dto';
@@ -15,24 +15,31 @@ export class AnnouncementsController {
     }
 
     @Get()
-    async findAll(@Body() filter: FilterDTO) {
-        return await this.announcementService.findAll(filter);
+    async findAll(@Query() filter: FilterDTO) {
+        const result = await this.announcementService.findAll(filter);
+        if (result.error) throw new InternalServerErrorException(result.error);
+        return result.data;
     }
 
     @Post()
     async create(@Body() payload: CreateAnnouncementDTO) {
-        console.log("❗ ~ file: announcements.controller.ts:24 ~ AnnouncementsController ~ create ~ payload:", payload)
-        return await this.announcementService.create(payload);
+        const result = await this.announcementService.create(payload);
+        if (result.error) throw new InternalServerErrorException(result.error);
+        return result.data;
     }
 
     @Put(":uuid")
     async update(@Param("uuid") uuid: string, @Body() payload: Partial<AnnouncementEntity>) {
-        return await this.announcementService.update({ uuid }, payload);
+        const result = await this.announcementService.update({ uuid }, payload);
+        if (result.error) throw new InternalServerErrorException(result.error);
+        return result.data;
     }
 
     @Delete(":uuid")
     async remove(@Param("uuid") uuid: string) {
-        return await this.announcementService.remove({ uuid });
+        const result = await this.announcementService.remove({ uuid });
+        if (result.error) throw new InternalServerErrorException(result.error);
+        return result.data;
     }
 
 }

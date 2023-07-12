@@ -8,7 +8,7 @@ export class PriceSocket {
     constructor() { this.open(); }
 
     open() {
-        this.instance = new WebSocket(appConfig.bitmapSocketUrl);
+        this.instance = new WebSocket(appConfig.bitmexSocketUrl);
         this.instance.onopen = this.onOpen;
         this.instance.onclose = this.onClose;
         this.instance.onmessage = this.onMessage;

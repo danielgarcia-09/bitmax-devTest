@@ -3,8 +3,8 @@ import 'dotenv/config';
 export const appConfig = {
     port: process.env.APP_PORT,
     socketPort: +process.env.SOCKET_PORT,
-    bitmapAnnouncementUrl: process.env.BITMAP_ANNOUNCEMENT_URL,
-    bitmapSocketUrl: process.env.BITMAP_SOCKET_URL,
+    bitmexAnnouncementUrl: process.env.BITMEX_ANNOUNCEMENT_URL,
+    bitmexSocketUrl: process.env.BITMEX_SOCKET_URL,
     isProd: process.env.NODE_ENV === "production",
 }
 

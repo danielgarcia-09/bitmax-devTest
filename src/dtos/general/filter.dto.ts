@@ -1,4 +1,8 @@
-import { IsNumber, IsOptional, IsPositive, IsString } from "class-validator";
+import { IsIn, IsNumber, IsOptional, IsPositive, IsString } from "class-validator";
+
+const orderByOptions = ["ASC", "DESC"] as const;
+
+export type OrderByOptions = typeof orderByOptions[number];
 
 export class FilterDTO {
 
@@ -19,7 +23,7 @@ export class FilterDTO {
     @IsOptional()
     take: number = 10
 
-    @IsString()
+    @IsIn(orderByOptions)
     @IsOptional()
-    orderBy: "ASC" | "DESC" = "ASC"
+    orderBy: OrderByOptions
 }
