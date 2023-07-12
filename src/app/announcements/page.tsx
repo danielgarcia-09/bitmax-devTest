@@ -3,12 +3,6 @@ import AnnouncementGrid from "@/components/announcements/AnnouncementGrid";
 import SearchForm from "@/components/search/SearchForm";
 import Head from "next/head";
 
-import type { Metadata } from 'next'
- 
-export const metadata: Metadata = {
-  title: 'Next.js',
-}
-
 const SearchPage = () => {
     return (
         <>
