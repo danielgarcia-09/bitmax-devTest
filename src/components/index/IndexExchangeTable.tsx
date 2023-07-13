@@ -14,11 +14,11 @@ const IndexExchangeTable = () => {
 
   const exchangeData = exchanges.map((exchange) => {
     return {
-      action: capitalize(exchange.action),
       symbol: exchange.symbol,
+      action: capitalize(exchange.action),
       price: exchange.price,
-      side: exchange.side,
       size: exchange.size || "N/A",
+      side: exchange.side,
       timestamp: new Date(exchange.timestamp).toLocaleString(),
     }
   })
